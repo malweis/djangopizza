@@ -1,0 +1,13 @@
+<h1>Ingredient List</h1>
+
+<ul>
+  {% for ingrediente in ingredientes %}
+    <li>
+      <a href="{% url 'pizzeria:ingrediente_detail' ingrediente.pk %}">{{ ingrediente.nombre }}</a>
+    </li>
+  {% empty %}
+    <li>No ingredients available.</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'pizzeria:ingrediente_create' %}">Create Ingredient</a>

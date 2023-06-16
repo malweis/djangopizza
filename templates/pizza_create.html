@@ -1,0 +1,14 @@
+<h1>Create Pizza</h1>
+
+<form method="post" action="{% url 'pizzeria:pizza_create' %}">
+  {% csrf_token %}
+  <label for="nombre">Name:</label>
+  <input type="text" name="nombre" required><br>
+  <label for="precio">Price:</label>
+  <input type="text" name="precio" required><br>
+  <label for="activo">Active:</label>
+  <input type="checkbox" name="activo"><br>
+  <button type="submit">Create</button>
+</form>
+
+<a href="{% url 'pizzeria:pizza_list' %}">Back to Pizza List</a>
